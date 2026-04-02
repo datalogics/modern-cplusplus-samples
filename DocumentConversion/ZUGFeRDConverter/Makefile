@@ -7,7 +7,7 @@ SRC = zugferd_converter.cpp
 
 SDK_ROOT ?= ../../..
 
-CXXFLAGS = -std=c++17 -I$(SDK_ROOT)/include -DPLATFORM_HAS_PDFPROCESSOR_PLUGIN=1
+CXXFLAGS = -std=c++17 -I$(SDK_ROOT)/include
 LDFLAGS = -L$(SDK_ROOT)/lib -ldatalogics_interface_api
 
 SDK_LIB := $(abspath $(SDK_ROOT)/lib)

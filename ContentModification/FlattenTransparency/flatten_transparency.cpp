@@ -13,9 +13,7 @@
 #include <datalogics_interface/document.hpp>
 #include <datalogics_interface/page.hpp>
 
-#if PLATFORM_HAS_PDFLATTENER_PLUGIN
 #include <datalogics_interface/flatten_transparency_params.hpp>
-#endif
 
 #include <iostream>
 
@@ -36,7 +34,6 @@ int main(int argc, char* argv[]) {
     if (argc > 3) sOutput1 = argv[3];
     if (argc > 4) sOutput2 = argv[4];
 
-#if PLATFORM_HAS_PDFLATTENER_PLUGIN
     // Open a document with a single page.
     Document doc1(sInput1);
 
@@ -78,9 +75,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Flattened a multi-page document " << sInput2 << " as " << sOutput2 << "." << std::endl;
         doc2.save(SaveFlags::Full, sOutput2);
     }
-#else
-    std::cout << "FlattenTransparency is not available on this platform." << std::endl;
-#endif
 
     return 0;
 }

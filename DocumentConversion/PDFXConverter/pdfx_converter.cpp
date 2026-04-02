@@ -30,7 +30,6 @@ int main(int argc, char* argv[]) {
 
     std::cout << "Input file: " << s_input << ". Writing to output " << s_output << std::endl;
 
-#if PLATFORM_HAS_PDFPROCESSOR_PLUGIN
     Document doc(s_input);
 
     // Make a conversion parameters object
@@ -49,9 +48,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Exception: " << ex.what() << std::endl;
         return 1;
     }
-#else
-    std::cout << "PDF/X conversion is not available on this platform." << std::endl;
-#endif
 
     return 0;
 }
