@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <!-- SDK root is three levels up from each sample .vcxproj -->
+    <SdkRoot>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)\..\..\..'))</SdkRoot>
+    <SdkLibDir>$(SdkRoot)\lib</SdkLibDir>
+  </PropertyGroup>
+
+  <!-- Add the SDK lib directory to PATH so the DLL is found at runtime.
+       This applies when launching from Visual Studio (F5 / Ctrl+F5). -->
+  <PropertyGroup>
+    <LocalDebuggerEnvironment>PATH=$(SdkLibDir);%PATH%</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>
