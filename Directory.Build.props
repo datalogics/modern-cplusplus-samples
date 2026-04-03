@@ -5,10 +5,13 @@
     <SdkLibDir>$(SdkRoot)\lib</SdkLibDir>
   </PropertyGroup>
 
-  <!-- Add the SDK lib directory to PATH so the DLL is found at runtime.
+  <!-- Add the SDK lib directory to PATH so the DLL and APDFL plugins are
+       found at runtime.  Set the working directory to the SDK lib directory
+       so that Library::get_resource_directory() resolves Resources/ correctly.
        This applies when launching from Visual Studio (F5 / Ctrl+F5). -->
   <PropertyGroup>
     <LocalDebuggerEnvironment>PATH=$(SdkLibDir);%PATH%</LocalDebuggerEnvironment>
+    <LocalDebuggerWorkingDirectory>$(SdkLibDir)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
