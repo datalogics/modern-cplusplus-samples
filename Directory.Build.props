@@ -3,6 +3,9 @@
     <!-- SDK root is three levels up from each sample .vcxproj -->
     <SdkRoot>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)\..\..\..'))</SdkRoot>
     <SdkLibDir>$(SdkRoot)\lib</SdkLibDir>
+    <!-- Use the 'd' suffixed library for Debug builds -->
+    <SdkApiLib Condition="'$(Configuration)'=='Debug'">datalogics_interface_apid.lib</SdkApiLib>
+    <SdkApiLib Condition="'$(Configuration)'!='Debug'">datalogics_interface_api.lib</SdkApiLib>
   </PropertyGroup>
 
   <!-- Add the SDK lib directory to PATH so the DLL and APDFL plugins are
@@ -14,4 +17,15 @@
     <LocalDebuggerWorkingDirectory>$(SdkLibDir)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+
+  <!-- Override the library name so all samples link the correct variant -->
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>$(SdkApiLib);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SdkLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SdkRoot)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
 </Project>
