@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This sample extracts text that matches a given CJK pattern in a PDF
  * document and saves the text to a file.

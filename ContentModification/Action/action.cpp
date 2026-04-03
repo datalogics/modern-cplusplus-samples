@@ -3,7 +3,7 @@
  * An action is added to the rectangle in the form of a hyperlink; if the viewer
  * clicks on the rectangle, it opens a Datalogics web page.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This sample processes PDF files in a folder and extracts text from specific
  * regions of its pages and saves the text to a CSV file.

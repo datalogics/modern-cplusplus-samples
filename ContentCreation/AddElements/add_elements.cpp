@@ -4,7 +4,7 @@
  * shows how to create colored text, text that is vertical or at an angle, and a shape
  * with color fill. The third page features a rectangle and a curved design.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

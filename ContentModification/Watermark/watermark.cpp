@@ -3,7 +3,7 @@
  * You could use this code to create a message to apply to PDF files you select, like
  * "Confidential" or "Draft Copy."
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

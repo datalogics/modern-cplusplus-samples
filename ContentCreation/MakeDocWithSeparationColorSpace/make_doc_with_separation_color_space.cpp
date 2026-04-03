@@ -1,7 +1,7 @@
 /*
  * This sample demonstrates creating a PDF document that uses a Separation color space.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

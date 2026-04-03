@@ -2,7 +2,7 @@
  * This sample program demonstrates the use of AddDigitalSignature for RFC3161 timestamp
  * signature type.
  *
- * Copyright (c) 2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

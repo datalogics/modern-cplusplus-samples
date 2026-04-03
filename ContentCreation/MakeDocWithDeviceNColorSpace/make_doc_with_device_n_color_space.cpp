@@ -1,7 +1,7 @@
 /*
  * This sample demonstrates creating a file containing a DeviceN color space.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

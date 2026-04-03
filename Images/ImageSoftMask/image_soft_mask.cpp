@@ -2,7 +2,7 @@
  * This sample demonstrates working with masking in PDF documents. A soft mask allows
  * you to place an image on a page and define the level of transparency for that image.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

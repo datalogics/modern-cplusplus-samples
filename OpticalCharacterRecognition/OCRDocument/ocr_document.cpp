@@ -1,7 +1,7 @@
 /*
  * Runs OCR on the document recognizing text found on its rasterized pages.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

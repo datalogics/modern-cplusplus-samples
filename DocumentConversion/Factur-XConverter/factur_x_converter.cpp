@@ -2,7 +2,7 @@
  * This sample demonstrates converting the input PDF with the input Invoice XML to a
  * Factur-X compliant PDF.
  *
- * Copyright (c) 2022-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

@@ -4,7 +4,7 @@
  * PDF/X is used for graphics exchange when printing content. It is a version of the PDF format
  * that guarantees accuracy in colors used.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

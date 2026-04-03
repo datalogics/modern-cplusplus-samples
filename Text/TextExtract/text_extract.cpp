@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This program pulls text from a PDF file and exports it to a text file.
  * It handles both tagged and untagged PDF documents.

@@ -3,7 +3,7 @@
  * Objects and displays information about them. The sample extracts the dictionary for an
  * object called URIAction and updates it using PDFObjects.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * Input file properties: First page must have an annotation with a URI link.
  */

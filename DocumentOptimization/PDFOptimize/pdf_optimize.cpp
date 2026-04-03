@@ -7,7 +7,7 @@
  * to suit your application's needs and drop such content to achieve better compression if you
  * already know it's unnecessary.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

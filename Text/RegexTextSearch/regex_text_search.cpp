@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This sample demonstrates using the DocTextFinder to find examples of a specific
  * phrase in a PDF document that match a user-supplied regular expression. When the

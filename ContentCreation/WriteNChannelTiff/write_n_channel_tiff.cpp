@@ -2,7 +2,7 @@
  * This sample generates a multi-page TIFF file, selecting graphics drawn from
  * the first page of the PDF document provided.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

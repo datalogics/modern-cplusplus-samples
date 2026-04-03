@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This sample extracts text and details (style and position) of that text
  * from a PDF document and saves the text to a JSON file.

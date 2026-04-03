@@ -3,7 +3,7 @@
  * of dictionary often used as a data structure in PDF files. Unlike a standard
  * dictionary, a name tree uses names as keys to map to data objects.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

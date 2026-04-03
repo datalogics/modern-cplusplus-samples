@@ -4,7 +4,7 @@
  *  - Import data into a XFA (Dynamic or Static) document; acceptable types: XDP, XML, and XFD
  *  - Import data into an AcroForms document; acceptable types: XFDF, FDF, or XML
  *
- * Copyright (c) 2024-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

@@ -3,7 +3,7 @@
  * The program opens a source file called sample.pdf, adds bookmarks to it, and
  * saves an output file called Bookmark-out.pdf.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

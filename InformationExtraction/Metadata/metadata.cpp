@@ -2,7 +2,7 @@
  * This sample shows how to view and edit metadata for a PDF document. The metadata values
  * appear on the Properties window in a PDF viewer (File > Properties > Additional Metadata).
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

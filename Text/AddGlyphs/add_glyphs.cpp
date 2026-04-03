@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * Use this program to create a new PDF file and add glyphs to the page,
  * managing them by individual Glyph ID codes.

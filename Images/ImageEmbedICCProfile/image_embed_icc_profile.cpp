@@ -2,7 +2,7 @@
  * This sample program demonstrates how to embed an ICC color profile in a graphics file.
  * The program sets up how the output will be rendered and generates TIF image files.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

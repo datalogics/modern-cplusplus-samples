@@ -1,7 +1,7 @@
 /*
  * This sample demonstrates how to find and describe annotations in an existing PDF document.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

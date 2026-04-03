@@ -8,7 +8,7 @@
  *
  * Note that the color profile is not embedded by default; the user must set the embed option to true.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

@@ -2,7 +2,7 @@
  * This sample demonstrates drawing a list of grayscale separations from a PDF file to
  * a multi-page TIFF file.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
