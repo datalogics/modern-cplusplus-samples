@@ -5,7 +5,7 @@
  * A stream is a string of bytes of any length. This program demonstrates constructing
  * an Image object from a file stream.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

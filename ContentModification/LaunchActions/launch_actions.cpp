@@ -3,7 +3,7 @@
  * An action is added to the rectangle in the form of a hyperlink; if the reader clicks
  * on the rectangle, a different PDF file opens, showing an image.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

@@ -2,7 +2,7 @@
  * This sample demonstrates creating an Output Preview Image which is used during
  * Soft Proofing prior to printing to visualize combining different Colorants.
  *
- * Copyright (c) 2023-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

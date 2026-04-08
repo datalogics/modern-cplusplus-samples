@@ -2,7 +2,7 @@
  * This sample demonstrates converting the input PDF with the input Invoice XML to a
  * Factur-X compliant PDF.
  *
- * Copyright (c) 2022-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
@@ -104,7 +104,6 @@ int main(int argc, char* argv[]) {
     std::cout << "Converting " << s_input_pdf << " with " << s_input_invoice_xml
               << ", output file is " << s_output << std::endl;
 
-#if PLATFORM_HAS_PDFPROCESSOR_PLUGIN
     // Step 1) Open the input PDF
     Document doc(s_input_pdf);
 
@@ -148,9 +147,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Exception: " << ex.what() << std::endl;
         return 1;
     }
-#else
-    std::cout << "PDF/A conversion is not available on this platform." << std::endl;
-#endif
 
     return 0;
 }

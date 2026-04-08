@@ -1,7 +1,7 @@
 /*
  * This sample searches for and lists the names of the color layers found in a PDF document.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

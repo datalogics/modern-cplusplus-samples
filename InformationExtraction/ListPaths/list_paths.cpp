@@ -2,7 +2,7 @@
  * This sample searches for and lists the contents of paths found in an existing PDF document.
  * Paths in PDF documents, or clipping paths, define the boundaries for art or graphics.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

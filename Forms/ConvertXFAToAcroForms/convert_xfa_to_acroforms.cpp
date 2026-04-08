@@ -2,7 +2,7 @@
  * The ConvertXFAToAcroForms sample demonstrates how to convert XFA into AcroForms.
  * Converts XFA (Dynamic or Static) fields to AcroForms fields and removes XFA fields.
  *
- * Copyright (c) 2024-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

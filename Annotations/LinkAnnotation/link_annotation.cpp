@@ -2,7 +2,7 @@
  * This program creates a PDF file with an embedded hyperlink, which takes the viewer to the
  * second page of the document.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

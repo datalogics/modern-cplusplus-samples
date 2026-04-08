@@ -2,7 +2,7 @@
  * This sample demonstrates working with Clip objects. A clipping path is used
  * to edit the borders of a graphics object.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

@@ -7,7 +7,7 @@
  * information is returned to the user.
  * ===============================================================================
  *
- * Copyright (c) 2022-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  */
 

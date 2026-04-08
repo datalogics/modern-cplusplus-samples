@@ -4,7 +4,7 @@
  *  - Export data from a XFA (Dynamic or Static) document; supported types: XDP, XML, or XFD
  *  - Export data from an AcroForms document; supported types: XFDF, FDF, or XML
  *
- * Copyright (c) 2024-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

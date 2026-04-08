@@ -6,7 +6,7 @@
  * This sample program shows how to use the Extended Graphic State object to add graphics
  * parameters to an image, demonstrating all 16 blend modes.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

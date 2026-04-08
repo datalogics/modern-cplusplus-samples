@@ -1,7 +1,7 @@
 /*
  * This sample demonstrates how to import an image into a PDF file.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

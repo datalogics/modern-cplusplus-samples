@@ -2,7 +2,7 @@
  * This sample creates and adds a new Ink annotation to a PDF document. An Ink annotation is a
  * freeform line, similar to what you would create with a pen, or with a stylus on a mobile device.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

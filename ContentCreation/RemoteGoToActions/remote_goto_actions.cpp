@@ -3,7 +3,7 @@
  * Click on the rectangle in this PDF file and a separate PDF file opens.
  * The RemoteGoToAction includes a RemoteDestination describing the view in the target file.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

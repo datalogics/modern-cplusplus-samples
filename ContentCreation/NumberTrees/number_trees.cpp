@@ -3,7 +3,7 @@
  * of dictionary often used as a data structure in PDF files. It is similar to a name
  * tree, except that the keys are integers sorted in ascending numerical order.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

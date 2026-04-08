@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This program describes how to render text from top to bottom on a page.
  * It provides WritingMode::Vertical with Unicode characters to present sample text

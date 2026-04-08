@@ -15,7 +15,7 @@ SDK_LIB := $(abspath $(SDK_ROOT)/lib)
 ifeq ($(UNAME),Darwin)
   LDFLAGS += -Wl,-rpath,$(SDK_LIB)
 else
-  LDFLAGS += -Wl,-rpath,$(SDK_LIB)
+  LDFLAGS += -lstdc++fs -Wl,-rpath,$(SDK_LIB)
 endif
 
 all: $(TARGET)

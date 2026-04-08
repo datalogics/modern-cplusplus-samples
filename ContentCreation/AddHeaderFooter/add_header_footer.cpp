@@ -1,7 +1,7 @@
 /*
  * This sample demonstrates creating a new PDF document with a Header and Footer.
  *
- * Copyright (c) 2022-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

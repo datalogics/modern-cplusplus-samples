@@ -4,7 +4,7 @@
  * XML Paper Specification (XPS) is a standard document format that Microsoft created in 2006
  * as an alternative to the PDF format.
  *
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

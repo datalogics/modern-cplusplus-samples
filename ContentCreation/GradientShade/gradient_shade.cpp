@@ -2,7 +2,7 @@
  * This sample demonstrates changing the shading of an image on a PDF document page.
  * The image gradually changes from black on the left side to red on the right side.
  *
- * Copyright (c) 2007-2024, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/library.hpp>

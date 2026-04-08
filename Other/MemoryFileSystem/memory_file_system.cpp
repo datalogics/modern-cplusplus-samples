@@ -5,7 +5,7 @@
  * The program sets the default temp store to TempStoreType::Memory. The program can also
  * set a maximum amount of RAM to use by applying a value to set_default_temp_store_mem_limit.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

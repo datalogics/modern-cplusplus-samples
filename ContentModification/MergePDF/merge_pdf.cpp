@@ -3,7 +3,7 @@
  * inserts the content of the second PDF file into the first PDF file and saves
  * the result in a third PDF file.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

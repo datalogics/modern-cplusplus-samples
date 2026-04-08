@@ -5,7 +5,7 @@
  * A stream is a string of bytes of any length, embedded in a PDF document with a dictionary
  * that is used to interpret the values in the stream.
  *
- * Copyright (c) 2007-2023, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>

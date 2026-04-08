@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This sample lists the text for the words in a PDF document.
  */

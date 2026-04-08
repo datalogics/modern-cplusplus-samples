@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2025, Datalogics, Inc. All rights reserved.
+ * Copyright (c) Datalogics, Inc. All rights reserved.
  *
  * This sample program adds several lines of Unicode text to a PDF file,
  * in different languages.
