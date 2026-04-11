@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     Path path;
     GraphicState gs;
     gs.set_fill_color(Color(0.0, 0.0, 0.0));
-    path.set_graphic_state(&gs);
+    path.set_graphic_state(gs);
     path.set_paint_op(PathPaintOp::Fill);
 
     // Add a rectangle to the path

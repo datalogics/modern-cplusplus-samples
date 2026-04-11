@@ -87,7 +87,7 @@ static void blend_page(Document& doc, Image& foregroundImage, Image& backgroundI
         GraphicState gs = indFG->get_graphic_state();
         ExtendedGraphicState xgs;
         xgs.set_blend_mode(kBlendModes[i].mode);
-        gs.set_extended_graphic_state(&xgs);
+        gs.set_extended_graphic_state(xgs);
         indFG->set_graphic_state(std::move(gs));
         std::cout << "Set blend mode: " << kBlendModes[i].name << std::endl;
 

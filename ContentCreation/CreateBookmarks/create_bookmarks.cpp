@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
         "(A) Root child, points to page 1, upper left corner, 300% zoom");
     {
         auto action = create_goto_action(doc, media_box, 3.0);
-        bm0->set_action(action.get());
+        bm0->set_action(*action);
     }
 
     // Use create_new_child() off the new bookmark
@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         "(B) Root child's child, points to page 1, halfway down page, 75% zoom");
     {
         auto action = create_goto_action(doc, rect1, 0.75);
-        bm1->set_action(action.get());
+        bm1->set_action(*action);
     }
 
     // Use create_new_sibling() to hang a bookmark next to bm0
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
         "(C) Root child's sibling, points to page 1, 1/4 from top of page, 133% zoom");
     {
         auto action = create_goto_action(doc, rect2, 1.33);
-        bm_sibling->set_action(action.get());
+        bm_sibling->set_action(*action);
     }
 
     // Move (B) to be a child of (C): unlink (B), then add it as a child of (C)

@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
     Path path;
     GraphicState gs;
     gs.set_fill_color(Color(asp));
-    path.set_graphic_state(&gs);
+    path.set_graphic_state(gs);
     path.set_paint_op(PathPaintOp::Stroke | PathPaintOp::Fill);
 
     path.move_to(Point(36, 36));

@@ -17,9 +17,9 @@ static void collect_ocgs(OptionalContentOrderArray& arr,
 {
     for (int i = 0; i < arr.get_length(); ++i) {
         auto node = arr.get(i);
-        if (auto* leaf = dynamic_cast<OptionalContentOrderLeaf*>(node.get())) {
+        if (auto* leaf = node->try_as<OptionalContentOrderLeaf>()) {
             out.push_back(leaf->get_optional_content_group());
-        } else if (auto* sub = dynamic_cast<OptionalContentOrderArray*>(node.get())) {
+        } else if (auto* sub = node->try_as<OptionalContentOrderArray>()) {
             collect_ocgs(*sub, out);
         }
     }

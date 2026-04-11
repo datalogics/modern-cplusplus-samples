@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
         Page page = doc.get_page(0);
         Content content = page.get_content();
         auto elem = content.get_element(0);
-        auto* image = static_cast<Image*>(elem.get());
+        auto* image = elem->try_as<Image>();
 
         // place_text_under creates a form with the image and generated text underneath.
         // The original image in the page is then replaced by the form.

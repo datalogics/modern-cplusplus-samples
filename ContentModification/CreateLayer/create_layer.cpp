@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
 
     // Get existing image and scale it to half
     auto elemPtr = pg.get_content().get_element(0);
-    auto* image = static_cast<Image*>(elemPtr.get());
+    auto* image = elemPtr->try_as<Image>();
     Matrix m = image->get_matrix();
     image->set_matrix(Matrix(m.a * 0.5, 0, 0, m.d * 0.5, m.h, m.v));
 
@@ -85,22 +85,22 @@ int main(int argc, char* argv[]) {
     Container imageContainer;
     Content imgContent1;
     imgContent1.add_element(*image);
-    imageContainer.set_content(&imgContent1);
+    imageContainer.set_content(imgContent1);
 
     Container imageContainer2;
     Content imgContent2;
     imgContent2.add_element(image2);
-    imageContainer2.set_content(&imgContent2);
+    imageContainer2.set_content(imgContent2);
 
     Container textContainer;
     Content txtContent1;
     txtContent1.add_element(text);
-    textContainer.set_content(&txtContent1);
+    textContainer.set_content(txtContent1);
 
     Container textContainer2;
     Content txtContent2;
     txtContent2.add_element(text2);
-    textContainer2.set_content(&txtContent2);
+    textContainer2.set_content(txtContent2);
 
     Document newDoc;
     Page newPage = newDoc.create_page(Document::before_first_page, pg.get_media_box());
@@ -157,5 +157,5 @@ void associate_ocg_with_container(Document& doc, OptionalContentGroup& ocg, Cont
     std::vector<OptionalContentGroup> ocg_vec;
     ocg_vec.emplace_back(doc, ocg.get_name());
     OptionalContentMembershipDict ocmd(doc, ocg_vec, VisibilityPolicy::AnyOn);
-    cont.set_optional_content_membership_dict(&ocmd);
+    cont.set_optional_content_membership_dict(ocmd);
 }

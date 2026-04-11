@@ -51,36 +51,20 @@ static void list_paths_in_content(Content& content, int pgno)
         auto elem = content.get_element(i);
         if (!elem) continue;
 
-        switch (elem->get_element_type()) {
-        case ElementType::Path:
-            list_path(static_cast<const Path&>(*elem), pgno);
-            break;
-        case ElementType::Container:
-        {
+        if (auto* p = elem->try_as<Path>()) {
+            list_path(*p, pgno);
+        } else if (auto* c = elem->try_as<Container>()) {
             std::cout << "Recurring through a Container" << std::endl;
-            auto& c = static_cast<Container&>(*elem);
-            auto sub = c.get_content();
+            auto sub = c->get_content();
             if (sub) list_paths_in_content(*sub, pgno);
-            break;
-        }
-        case ElementType::Group:
-        {
+        } else if (auto* g = elem->try_as<Group>()) {
             std::cout << "Recurring through a Group" << std::endl;
-            auto& g = static_cast<Group&>(*elem);
-            auto sub = g.get_content();
+            auto sub = g->get_content();
             if (sub) list_paths_in_content(*sub, pgno);
-            break;
-        }
-        case ElementType::Form:
-        {
+        } else if (auto* f = elem->try_as<Form>()) {
             std::cout << "Recurring through a Form" << std::endl;
-            auto& f = static_cast<Form&>(*elem);
-            auto sub = f.get_content();
+            auto sub = f->get_content();
             if (sub) list_paths_in_content(*sub, pgno);
-            break;
-        }
-        default:
-            break;
         }
     }
 }
