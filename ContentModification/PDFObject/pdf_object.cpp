@@ -32,9 +32,9 @@ int main(int argc, char* argv[]) {
     Page page = doc.get_page(0);
 
     auto annotPtr = page.get_annotation(1);
-    auto* linkAnnot = static_cast<LinkAnnotation*>(annotPtr.get());
+    auto* linkAnnot = annotPtr->try_as<LinkAnnotation>();
     auto actionPtr = linkAnnot->get_action();
-    auto* uri = static_cast<URIAction*>(actionPtr.get());
+    auto* uri = actionPtr->try_as<URIAction>();
 
     // Print some info about the URI action, before we modify it
     std::cout << "Initial URL: " << uri->get_uri() << std::endl;
@@ -69,9 +69,9 @@ int main(int argc, char* argv[]) {
     Document doc2(sOutput);
     Page page2 = doc2.get_page(0);
     auto annotPtr2 = page2.get_annotation(1);
-    auto* linkAnnot2 = static_cast<LinkAnnotation*>(annotPtr2.get());
+    auto* linkAnnot2 = annotPtr2->try_as<LinkAnnotation>();
     auto actionPtr2 = linkAnnot2->get_action();
-    auto* uri2 = static_cast<URIAction*>(actionPtr2.get());
+    auto* uri2 = actionPtr2->try_as<URIAction>();
 
     std::cout << "Modified URL: " << uri2->get_uri() << std::endl;
     std::cout << "Is Map property (if not present, defaults to false): "

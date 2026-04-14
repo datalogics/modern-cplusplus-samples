@@ -16,23 +16,18 @@ using namespace datalogics_interface;
 static void recognize_content(Document& doc, Content& content, OCREngine& engine) {
     for (int index = 0; index < content.get_num_elements(); index++) {
         auto elem = content.get_element(index);
-        ElementType type = elem->get_element_type();
 
-        if (type == ElementType::Image) {
-            auto* image = static_cast<Image*>(elem.get());
+        if (auto* image = elem->try_as<Image>()) {
             auto form = engine.place_text_under(*image, doc);
             content.remove_element(index);
             content.add_element(*form, index - 1);
-        } else if (type == ElementType::Container) {
-            auto* container = static_cast<Container*>(elem.get());
+        } else if (auto* container = elem->try_as<Container>()) {
             auto sub = container->get_content();
             recognize_content(doc, *sub, engine);
-        } else if (type == ElementType::Group) {
-            auto* group = static_cast<Group*>(elem.get());
+        } else if (auto* group = elem->try_as<Group>()) {
             auto sub = group->get_content();
             recognize_content(doc, *sub, engine);
-        } else if (type == ElementType::Form) {
-            auto* form = static_cast<Form*>(elem.get());
+        } else if (auto* form = elem->try_as<Form>()) {
             auto sub = form->get_content();
             recognize_content(doc, *sub, engine);
         }

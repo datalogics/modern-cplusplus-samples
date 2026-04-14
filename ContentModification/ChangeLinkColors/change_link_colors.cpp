@@ -79,26 +79,21 @@ int main(int argc, char* argv[]) {
 void find_and_process_text(Content& content, const std::vector<Rect>& link_rects) {
     for (int i = 0; i < content.get_num_elements(); i++) {
         auto elem = content.get_element(i);
-        ElementType etype = elem->get_element_type();
 
-        if (etype == ElementType::Container) {
-            auto* cont = static_cast<Container*>(elem.get());
+        if (auto* cont = elem->try_as<Container>()) {
             auto nested = cont->get_content();
             if (nested)
                 find_and_process_text(*nested, link_rects);
-        } else if (etype == ElementType::Form) {
-            auto* form = static_cast<Form*>(elem.get());
+        } else if (auto* form = elem->try_as<Form>()) {
             auto nested = form->get_content();
             if (nested)
                 find_and_process_text(*nested, link_rects);
-        } else if (etype == ElementType::Group) {
-            auto* group = static_cast<Group*>(elem.get());
+        } else if (auto* group = elem->try_as<Group>()) {
             auto nested = group->get_content();
             if (nested)
                 find_and_process_text(*nested, link_rects);
-        } else if (etype == ElementType::Text) {
+        } else if (auto* txt = elem->try_as<Text>()) {
             std::cout << "Found a Text object." << std::endl;
-            auto* txt = static_cast<Text*>(elem.get());
             check_characters_in_text(*txt, link_rects);
         }
     }
@@ -157,7 +152,7 @@ void check_characters_in_text(Text& txt, const std::vector<Rect>& link_rects) {
                 auto txtRun = txt.get_run(runIndex);
                 auto gs = txtRun->get_graphic_state();
                 gs->set_fill_color(Color(0.0, 0.0, 1.0));
-                txtRun->set_graphic_state(gs.get());
+                txtRun->set_graphic_state(*gs);
             }
         }
     }

@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
     star_gs.set_width(2.0);
     star_gs.set_dash_pattern({3.0, 5.0, 6.0});
     star_gs.set_stroke_color(Color(0, 1.0, 0));  // Green
-    starpath.set_graphic_state(&star_gs);
+    starpath.set_graphic_state(star_gs);
     starpath.set_paint_op(PathPaintOp::Stroke);
 
     double center_x = 306.0;
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
     pent_gs.set_width(2.0);
     pent_gs.set_dash_pattern({0.0, 3.0});
     pent_gs.set_stroke_color(Color(1.0, 0.0, 1.0));  // Purple
-    pentpath.set_graphic_state(&pent_gs);
+    pentpath.set_graphic_state(pent_gs);
     pentpath.set_paint_op(PathPaintOp::Stroke);
     pentpath.move_to(pt0);
     pentpath.add_line(pt1);
@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
     GraphicState inner_gs;
     inner_gs.set_width(1.0);
     inner_gs.set_stroke_color(Color(0, 0, 1.0));  // Blue
-    newstar.set_graphic_state(&inner_gs);
+    newstar.set_graphic_state(inner_gs);
     newstar.set_paint_op(PathPaintOp::EoFill);
 
     Point center_pt(center_x, center_y);
@@ -131,7 +131,7 @@ int main(int argc, char* argv[]) {
     diamond_gs.set_stroke_color(Color(153.0 / 255.0, 0, 0));
     diamond_gs.set_width(1.0);
     diamond_gs.set_line_join(LineJoin::Bevel);
-    diamond.set_graphic_state(&diamond_gs);
+    diamond.set_graphic_state(diamond_gs);
     diamond.set_paint_op(PathPaintOp::EoFill | PathPaintOp::Stroke);
     diamond.move_to(Point(306, 198));
     diamond.add_line(Point(459, 396));
@@ -185,7 +185,7 @@ int main(int argc, char* argv[]) {
     Path path3;
     GraphicState gs_p3;
     gs_p3.set_width(2.0);
-    path3.set_graphic_state(&gs_p3);
+    path3.set_graphic_state(gs_p3);
     path3.set_paint_op(PathPaintOp::Stroke);
 
     // Use segments

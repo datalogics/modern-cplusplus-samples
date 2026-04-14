@@ -23,13 +23,7 @@ static void export_element_images(Content& content, ImageType export_type)
         std::unique_ptr<Element> elem = content.get_element(i);
         if (!elem) continue;
 
-        ElementType etype = elem->get_element_type();
-
-        if (etype == ElementType::Image) {
-            // Downcast to Image
-            Image* img_ptr = dynamic_cast<Image*>(elem.get());
-            if (!img_ptr) continue;
-
+        if (auto* img_ptr = elem->try_as<Image>()) {
             // Weed out impossible or nonsensical combinations.
             // (get_color_space is deprecated/unimplemented; skip CMYK check for now)
 
@@ -61,38 +55,19 @@ static void export_element_images(Content& content, ImageType export_type)
 
             ++next_index;
 
-        } else if (etype == ElementType::Container || etype == ElementType::Group
-                   || etype == ElementType::Form) {
-            // Recurse into sub-content
-            // Note: Container, Group, Form are Element subtypes;
-            // we access their content via dynamic_cast.
-            // The C++ API exposes Container/Group/Form as separate headers.
-            // Use container's content if available through the typed interface.
-            // For now we note that recursion through these types requires
-            // the container.hpp / group.hpp / form.hpp headers.
-            // We include datalogics_interface.hpp which pulls them all in.
-            if (etype == ElementType::Container) {
-                auto* cont = dynamic_cast<Container*>(elem.get());
-                if (cont) {
-                    std::cout << "Recursing through a Container" << std::endl;
-                    auto sub = cont->get_content();
-                    if (sub) export_element_images(*sub, export_type);
-                }
-            } else if (etype == ElementType::Group) {
-                auto* grp = dynamic_cast<Group*>(elem.get());
-                if (grp) {
-                    std::cout << "Recursing through a Group" << std::endl;
-                    auto sub = grp->get_content();
-                    if (sub) export_element_images(*sub, export_type);
-                }
-            } else if (etype == ElementType::Form) {
-                auto* frm = dynamic_cast<Form*>(elem.get());
-                if (frm) {
-                    std::cout << "Recursing through a Form" << std::endl;
-                    auto sub = frm->get_content();
-                    if (sub) export_element_images(*sub, export_type);
-                }
-            }
+        } else if (auto* cont = elem->try_as<Container>()) {
+            // Recurse into sub-content.
+            std::cout << "Recursing through a Container" << std::endl;
+            auto sub = cont->get_content();
+            if (sub) export_element_images(*sub, export_type);
+        } else if (auto* grp = elem->try_as<Group>()) {
+            std::cout << "Recursing through a Group" << std::endl;
+            auto sub = grp->get_content();
+            if (sub) export_element_images(*sub, export_type);
+        } else if (auto* frm = elem->try_as<Form>()) {
+            std::cout << "Recursing through a Form" << std::endl;
+            auto sub = frm->get_content();
+            if (sub) export_element_images(*sub, export_type);
         }
     }
 }

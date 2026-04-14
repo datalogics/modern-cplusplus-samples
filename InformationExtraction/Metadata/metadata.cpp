@@ -66,9 +66,8 @@ static bool display_image_xmp(Content& content)
         auto elem = content.get_element(i);
         if (!elem) continue;
 
-        if (elem->get_element_type() == ElementType::Image) {
-            auto& img = static_cast<Image&>(*elem);
-            std::string xmp = img.get_xmp_metadata();
+        if (auto* img = elem->try_as<Image>()) {
+            std::string xmp = img->get_xmp_metadata();
             if (!xmp.empty()) {
                 std::cout << "Image XMP Metadata:" << std::endl;
                 std::cout << xmp << std::endl;
@@ -79,19 +78,16 @@ static bool display_image_xmp(Content& content)
         }
 
         // Recurse into containers, forms, and groups
-        if (elem->get_element_type() == ElementType::Container) {
-            auto& container = static_cast<Container&>(*elem);
-            if (auto sub = container.get_content()) {
+        if (auto* container = elem->try_as<Container>()) {
+            if (auto sub = container->get_content()) {
                 if (display_image_xmp(*sub)) return true;
             }
-        } else if (elem->get_element_type() == ElementType::Form) {
-            auto& form = static_cast<Form&>(*elem);
-            if (auto sub = form.get_content()) {
+        } else if (auto* form = elem->try_as<Form>()) {
+            if (auto sub = form->get_content()) {
                 if (display_image_xmp(*sub)) return true;
             }
-        } else if (elem->get_element_type() == ElementType::Group) {
-            auto& group = static_cast<Group&>(*elem);
-            if (auto sub = group.get_content()) {
+        } else if (auto* group = elem->try_as<Group>()) {
+            if (auto sub = group->get_content()) {
                 if (display_image_xmp(*sub)) return true;
             }
         }

@@ -27,47 +27,33 @@ static void resample_images(Content& content)
         std::cout << i << " / " << content.get_num_elements()
                   << " = " << static_cast<int>(elem->get_element_type()) << std::endl;
 
-        ElementType etype = elem->get_element_type();
-
-        if (etype == ElementType::Image) {
-            Image* img_ptr = dynamic_cast<Image*>(elem.get());
-            if (img_ptr) {
-                try {
-                    Image new_img = img_ptr->change_resolution(400);
-                    std::cout << "Replacing an image..." << std::endl;
-                    // Add the new image at position i (inserts after i-1)
-                    content.add_element(new_img, i - 1);
-                    // Remove the old image which is now at i+1
-                    content.remove_element(i + 1);
-                    std::cout << "Replaced." << std::endl;
-                    ++num_replaced;
-                } catch (const std::exception& ex) {
-                    std::cerr << ex.what() << std::endl;
-                }
+        if (auto* img_ptr = elem->try_as<Image>()) {
+            try {
+                Image new_img = img_ptr->change_resolution(400);
+                std::cout << "Replacing an image..." << std::endl;
+                // Add the new image at position i (inserts after i-1)
+                content.add_element(new_img, i - 1);
+                // Remove the old image which is now at i+1
+                content.remove_element(i + 1);
+                std::cout << "Replaced." << std::endl;
+                ++num_replaced;
+            } catch (const std::exception& ex) {
+                std::cerr << ex.what() << std::endl;
             }
-        } else if (etype == ElementType::Container) {
+        } else if (auto* cont = elem->try_as<Container>()) {
             std::cout << "Recursing through a Container" << std::endl;
-            auto* cont = dynamic_cast<Container*>(elem.get());
-            if (cont) {
-                auto sub = cont->get_content();
-                if (sub) resample_images(*sub);
-            }
-        } else if (etype == ElementType::Group) {
+            auto sub = cont->get_content();
+            if (sub) resample_images(*sub);
+        } else if (auto* grp = elem->try_as<Group>()) {
             std::cout << "Recursing through a Group" << std::endl;
-            auto* grp = dynamic_cast<Group*>(elem.get());
-            if (grp) {
-                auto sub = grp->get_content();
-                if (sub) resample_images(*sub);
-            }
-        } else if (etype == ElementType::Form) {
+            auto sub = grp->get_content();
+            if (sub) resample_images(*sub);
+        } else if (auto* frm = elem->try_as<Form>()) {
             std::cout << "Recursing through a Form" << std::endl;
-            auto* frm = dynamic_cast<Form*>(elem.get());
-            if (frm) {
-                auto sub = frm->get_content();
-                if (sub) {
-                    resample_images(*sub);
-                    frm->set_content(sub.get());
-                }
+            auto sub = frm->get_content();
+            if (sub) {
+                resample_images(*sub);
+                frm->set_content(*sub);
             }
         }
 

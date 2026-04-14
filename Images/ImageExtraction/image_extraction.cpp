@@ -22,12 +22,7 @@ static void extract_images(Content& content)
         std::unique_ptr<Element> elem = content.get_element(i);
         if (!elem) continue;
 
-        ElementType etype = elem->get_element_type();
-
-        if (etype == ElementType::Image) {
-            Image* img_ptr = dynamic_cast<Image*>(elem.get());
-            if (!img_ptr) continue;
-
+        if (auto* img_ptr = elem->try_as<Image>()) {
             std::cout << "Saving an image" << std::endl;
 
             // Save the image at original resolution
@@ -41,24 +36,15 @@ static void extract_images(Content& content)
 
             ++next_index;
 
-        } else if (etype == ElementType::Container) {
-            auto* cont = dynamic_cast<Container*>(elem.get());
-            if (cont) {
-                auto sub = cont->get_content();
-                if (sub) extract_images(*sub);
-            }
-        } else if (etype == ElementType::Group) {
-            auto* grp = dynamic_cast<Group*>(elem.get());
-            if (grp) {
-                auto sub = grp->get_content();
-                if (sub) extract_images(*sub);
-            }
-        } else if (etype == ElementType::Form) {
-            auto* frm = dynamic_cast<Form*>(elem.get());
-            if (frm) {
-                auto sub = frm->get_content();
-                if (sub) extract_images(*sub);
-            }
+        } else if (auto* cont = elem->try_as<Container>()) {
+            auto sub = cont->get_content();
+            if (sub) extract_images(*sub);
+        } else if (auto* grp = elem->try_as<Group>()) {
+            auto sub = grp->get_content();
+            if (sub) extract_images(*sub);
+        } else if (auto* frm = elem->try_as<Form>()) {
+            auto sub = frm->get_content();
+            if (sub) extract_images(*sub);
         }
     }
 }
