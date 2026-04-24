@@ -60,9 +60,9 @@ The Makefile sets RPATH so the executable finds SDK libraries automatically.
 | DocumentOptimization | 1 |
 | Forms | 4 |
 | Images | 14 |
-| InformationExtraction | 5 |
+| InformationExtraction | 6 |
 | OpticalCharacterRecognition | 3 |
 | Other | 2 |
 | Security | 4 |
 | Text | 14 |
-| **Total** | **89** |
+| **Total** | **90** |
