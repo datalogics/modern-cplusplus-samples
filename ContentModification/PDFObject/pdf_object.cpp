@@ -55,12 +55,12 @@ int main(int argc, char* argv[]) {
     // Create a new string object
     PDFString uri_string("http://www.google.com", doc, false, false);
 
-    uri_dict->put("URI", uri_string);    // Change the URI (replaces the old one)
-    uri_dict->remove("IsMap");           // Remove the IsMap entry
+    uri_dict.put("URI", uri_string);     // Change the URI (replaces the old one)
+    uri_dict.remove("IsMap");            // Remove the IsMap entry
 
     // Check that we deleted the IsMap entry
     std::cout << "Does this dictionary have an IsMap entry? "
-              << (uri_dict->contains("IsMap") ? "true" : "false") << std::endl;
+              << (uri_dict.contains("IsMap") ? "true" : "false") << std::endl;
 
     doc.save(SaveFlags::Full, sOutput);
     doc.close();
