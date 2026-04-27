@@ -63,7 +63,7 @@ int main() {
     // Get the PDFDict from the NumberTree
     auto dict = numbertree.get_pdf_dict();
     std::cout << "\nThe PDFDict from the NumberTree:" << std::endl;
-    std::cout << (dict ? dict->to_string() : "null") << std::endl;
+    std::cout << dict.to_string() << std::endl;
 
     std::cout << "\nDone." << std::endl;
     return 0;

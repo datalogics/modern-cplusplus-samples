@@ -71,7 +71,7 @@ int main() {
     // Get the PDFDict from the NameTree
     auto dict = nametree.get_pdf_dict();
     std::cout << "\nThe PDFDict from the NameTree:" << std::endl;
-    std::cout << (dict ? dict->to_string() : "null") << std::endl;
+    std::cout << dict.to_string() << std::endl;
 
     // Use Document methods to operate on NameTree
     auto doc_tree = doc.create_name_tree("MyNameTree");
