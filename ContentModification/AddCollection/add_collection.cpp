@@ -8,12 +8,7 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/collection.hpp>
-#include <datalogics_interface/collection_schema.hpp>
-#include <datalogics_interface/collection_schema_field.hpp>
-#include <datalogics_interface/collection_sort_item.hpp>
+
 #include <iostream>
 #include <vector>
 

@@ -8,16 +8,7 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/word_finder.hpp>
-#include <datalogics_interface/word_finder_config.hpp>
-#include <datalogics_interface/word.hpp>
-#include <datalogics_interface/highlight_annotation.hpp>
-#include <datalogics_interface/underline_annotation.hpp>
-#include <datalogics_interface/color.hpp>
-#include <datalogics_interface/geometry.hpp>
+
 #include <algorithm>
 #include <cctype>
 #include <iostream>

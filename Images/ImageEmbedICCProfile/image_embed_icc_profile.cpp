@@ -6,7 +6,7 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/named_color_space.hpp>
+
 #include <iostream>
 #include <string>
 

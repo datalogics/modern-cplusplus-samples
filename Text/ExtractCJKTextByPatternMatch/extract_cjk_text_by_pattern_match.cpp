@@ -6,9 +6,6 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/doc_text_finder.hpp>
 
 #include <fstream>
 #include <iostream>

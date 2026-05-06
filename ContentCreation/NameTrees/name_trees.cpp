@@ -6,14 +6,7 @@
  * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/name_tree.hpp>
-#include <datalogics_interface/pdf_string.hpp>
-#include <datalogics_interface/pdf_object.hpp>
-#include <datalogics_interface/pdf_dict.hpp>
-#include <datalogics_interface/geometry.hpp>
+#include <datalogics_interface/datalogics_interface.hpp>
 
 #include <iostream>
 #include <memory>

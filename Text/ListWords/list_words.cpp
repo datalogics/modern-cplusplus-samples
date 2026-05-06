@@ -5,12 +5,6 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/word_finder.hpp>
-#include <datalogics_interface/word_finder_config.hpp>
-#include <datalogics_interface/word.hpp>
-#include <datalogics_interface/style.hpp>
 
 #include <iostream>
 #include <string>
