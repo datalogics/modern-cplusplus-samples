@@ -11,21 +11,7 @@
  *
  */
 
-#include <datalogics_interface/color.hpp>
-#include <datalogics_interface/color_space.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/geometry.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/annotation.hpp>
-#include <datalogics_interface/style.hpp>
-#include <datalogics_interface/word.hpp>
-#include <datalogics_interface/word_finder.hpp>
-#include <datalogics_interface/word_finder_config.hpp>
-#include <datalogics_interface/pdf_array.hpp>
-#include <datalogics_interface/pdf_dict.hpp>
-#include <datalogics_interface/pdf_name.hpp>
-#include <datalogics_interface/pdf_object.hpp>
-#include <datalogics_interface/pdf_string.hpp>
+#include <datalogics_interface/datalogics_interface.hpp>
 
 #include <memory>
 #include <string>

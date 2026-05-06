@@ -5,18 +5,7 @@
  * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/content.hpp>
-#include <datalogics_interface/path.hpp>
-#include <datalogics_interface/graphic_state.hpp>
-#include <datalogics_interface/color.hpp>
-#include <datalogics_interface/color_space.hpp>
-#include <datalogics_interface/named_color_space.hpp>
-#include <datalogics_interface/exponential_function.hpp>
-#include <datalogics_interface/axial_shading_pattern.hpp>
-#include <datalogics_interface/geometry.hpp>
+#include <datalogics_interface/datalogics_interface.hpp>
 
 #include <iostream>
 #include <memory>

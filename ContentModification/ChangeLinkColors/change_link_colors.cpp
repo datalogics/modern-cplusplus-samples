@@ -10,20 +10,7 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/content.hpp>
-#include <datalogics_interface/element.hpp>
-#include <datalogics_interface/text.hpp>
-#include <datalogics_interface/text_run.hpp>
-#include <datalogics_interface/container.hpp>
-#include <datalogics_interface/form.hpp>
-#include <datalogics_interface/group.hpp>
-#include <datalogics_interface/annotation.hpp>
-#include <datalogics_interface/graphic_state.hpp>
-#include <datalogics_interface/color.hpp>
-#include <datalogics_interface/geometry.hpp>
+
 #include <iostream>
 #include <vector>
 #include <cmath>

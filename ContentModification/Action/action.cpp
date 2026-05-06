@@ -7,13 +7,7 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/link_annotation.hpp>
-#include <datalogics_interface/uri_action.hpp>
-#include <datalogics_interface/goto_action.hpp>
-#include <datalogics_interface/view_destination.hpp>
+
 #include <iostream>
 
 using namespace datalogics_interface;

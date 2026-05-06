@@ -8,11 +8,7 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/optional_content_config.hpp>
-#include <datalogics_interface/optional_content_group.hpp>
-#include <datalogics_interface/optional_content_order.hpp>
+
 #include <iostream>
 #include <vector>
 

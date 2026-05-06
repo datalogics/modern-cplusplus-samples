@@ -7,13 +7,6 @@
  */
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/library.hpp>
-#include <datalogics_interface/doc_text_finder.hpp>
-#include <datalogics_interface/page.hpp>
-#include <datalogics_interface/highlight_annotation.hpp>
-#include <datalogics_interface/annotation.hpp>
-#include <datalogics_interface/form.hpp>
 
 #include <iostream>
 #include <string>

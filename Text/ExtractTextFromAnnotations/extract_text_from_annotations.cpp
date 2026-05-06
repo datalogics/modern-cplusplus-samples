@@ -8,8 +8,6 @@
 #include "../../_Common/extract_text.hpp"
 
 #include <datalogics_interface/datalogics_interface.hpp>
-#include <datalogics_interface/document.hpp>
-#include <datalogics_interface/library.hpp>
 
 #include <fstream>
 #include <iostream>
