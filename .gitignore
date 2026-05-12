@@ -1,0 +1,119 @@
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.d
+
+# Compiled binaries (extensionless executables built by make)
+pdf_optimize
+memory_file_system
+stream_io
+convert_xfa_to_acroforms
+export_forms_data
+flatten_forms
+import_forms_data
+**/list_info
+**/list_bookmarks
+**/list_layers
+**/list_paths
+# Compiled binary named 'metadata' (not the directory)
+InformationExtraction/Metadata/metadata
+
+# Annotations binaries
+Annotations/Annotations/annotations
+Annotations/InkAnnotations/ink_annotations
+Annotations/LinkAnnotation/link_annotation
+Annotations/PolygonAnnotations/polygon_annotations
+Annotations/PolyLineAnnotations/polyline_annotations
+
+# Security binaries
+Security/AddDigitalSignatureCMS/add_digital_signature_cms
+Security/AddDigitalSignatureRFC3161/add_digital_signature_rfc3161
+Security/AddRegexRedaction/add_regex_redaction
+Security/Redactions/redactions
+
+# ContentCreation binaries
+ContentCreation/AddElements/add_elements
+ContentCreation/AddHeaderFooter/add_header_footer
+ContentCreation/Clips/clips
+ContentCreation/CreateBookmarks/create_bookmarks
+ContentCreation/GradientShade/gradient_shade
+ContentCreation/MakeDocWithCalGrayColorSpace/make_doc_with_cal_gray_color_space
+ContentCreation/MakeDocWithCalRGBColorSpace/make_doc_with_cal_rgb_color_space
+ContentCreation/MakeDocWithDeviceNColorSpace/make_doc_with_device_n_color_space
+ContentCreation/MakeDocWithICCBasedColorSpace/make_doc_with_icc_based_color_space
+ContentCreation/MakeDocWithIndexedColorSpace/make_doc_with_indexed_color_space
+ContentCreation/MakeDocWithLabColorSpace/make_doc_with_lab_color_space
+ContentCreation/MakeDocWithSeparationColorSpace/make_doc_with_separation_color_space
+ContentCreation/NameTrees/name_trees
+ContentCreation/NumberTrees/number_trees
+ContentCreation/RemoteGoToActions/remote_goto_actions
+ContentCreation/WriteNChannelTiff/write_n_channel_tiff
+
+# ContentModification binaries
+ContentModification/Action/action
+ContentModification/AddCollection/add_collection
+ContentModification/AddQRCode/add_qr_code
+ContentModification/ChangeLayerConfiguration/change_layer_configuration
+ContentModification/ChangeLinkColors/change_link_colors
+ContentModification/CreateLayer/create_layer
+ContentModification/ExtendedGraphicStates/extended_graphic_states
+ContentModification/FlattenTransparency/flatten_transparency
+ContentModification/LaunchActions/launch_actions
+ContentModification/MergePDF/merge_pdf
+ContentModification/PageLabels/page_labels
+ContentModification/PDFObject/pdf_object
+ContentModification/UnderlinesAndHighlights/underlines_and_highlights
+ContentModification/Watermark/watermark
+
+# Images binaries
+Images/DocToImages/doc_to_images
+Images/DrawSeparations/draw_separations
+Images/DrawToBitmap/draw_to_bitmap
+Images/EPSSeparations/eps_separations
+Images/GetSeparatedImages/get_separated_images
+Images/ImageEmbedICCProfile/image_embed_icc_profile
+Images/ImageExport/image_export
+Images/ImageExtraction/image_extraction
+Images/ImageFromStream/image_from_stream
+Images/ImageImport/image_import
+Images/ImageResampling/image_resampling
+Images/ImageSoftMask/image_soft_mask
+Images/OutputPreview/output_preview
+Images/RasterizePage/rasterize_page
+
+# MSVC output
+*.pdb
+*.ilk
+x64/
+Debug/
+Release/
+
+# IDE files
+.vs/
+*.user
+*.suo
+
+# macOS
+.DS_Store
+*.dSYM/
+
+# Output files
+*-out.*
+*-out-*
+
+# Text binaries
+Text/AddGlyphs/add_glyphs
+Text/AddUnicodeText/add_unicode_text
+Text/AddVerticalText/add_vertical_text
+Text/ExtractAcroFormFieldData/extract_acro_form_field_data
+Text/ExtractCJKTextByPatternMatch/extract_cjk_text_by_pattern_match
+Text/ExtractTextByPatternMatch/extract_text_by_pattern_match
+Text/ExtractTextByRegion/extract_text_by_region
+Text/ExtractTextFromAnnotations/extract_text_from_annotations
+Text/ExtractTextFromMultiRegions/extract_text_from_multi_regions
+Text/ExtractTextPreservingStyleAndPositionInfo/extract_text_preserving_style_and_position_info
+Text/ListWords/list_words
+Text/RegexExtractText/regex_extract_text
+Text/RegexTextSearch/regex_text_search
+Text/TextExtract/text_extract
