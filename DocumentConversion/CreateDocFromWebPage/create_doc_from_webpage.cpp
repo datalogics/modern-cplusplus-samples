@@ -19,16 +19,16 @@ using namespace datalogics_interface;
 
 namespace {
 
-/// Returns true if `s` looks like a URL the conversion plugin handles
-/// natively (http/https/file).
+// Returns true if `s` looks like a URL the conversion plugin handles
+// natively (http/https/file).
 bool looks_like_url(const std::string& s) {
     return s.rfind("http://",  0) == 0
         || s.rfind("https://", 0) == 0
         || s.rfind("file://",  0) == 0;
 }
 
-/// Human-readable name for a WebConvertError::Category.
-const char* category_name(WebConvertError::Category c) {
+// Human-readable name for a WebConvertError::Category.
+std::string category_name(const WebConvertError::Category c) {
     switch (c) {
     case WebConvertError::Category::InvalidArgument:   return "Invalid argument";
     case WebConvertError::Category::PluginUnavailable: return "Plugin unavailable";
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
 
         params.set_log_callback(
             [](WebLogLevel level, const std::string& message) {
-                const char* lvl = "INFO";
+                std::string lvl = "INFO";
                 switch (level) {
                 case WebLogLevel::Error:   lvl = "ERROR";   break;
                 case WebLogLevel::Warning: lvl = "WARNING"; break;
@@ -88,10 +88,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Converting " << (is_url ? "URL " : "HTML file ")
                   << source << " ..." << std::endl;
 
-        // First conversion in a process spawns a separate WebToPDF server
-        // (CEF runs out-of-process), so the call below may take up to a
-        // second to start before any progress callbacks fire. Subsequent
-        // conversions reuse the running server.
         auto [doc, info] = is_url
             ? Document::from_web_url(source, params)
             : Document::from_html_file(source, params);
