@@ -1,6 +1,11 @@
 /*
- * This sample demonstrates converting a web page or local HTML file into a
- * PDF document using the modern C++ interface.
+ * This sample demonstrates converting a web page or local HTML file into
+ * a PDF document using the modern C++ interface.
+ *
+ * The single positional argument can be either a URL (http://, https://,
+ * or file://) or a path to a local HTML file. The sample auto-detects
+ * which based on the scheme prefix and routes to Document::from_web_url
+ * or Document::from_html_file accordingly.
  *
  * Copyright (c) Datalogics, Inc. All rights reserved.
  */
@@ -11,6 +16,32 @@
 #include <string>
 
 using namespace datalogics_interface;
+
+namespace {
+
+/// Returns true if `s` looks like a URL the conversion plugin handles
+/// natively (http/https/file).
+bool looks_like_url(const std::string& s) {
+    return s.rfind("http://",  0) == 0
+        || s.rfind("https://", 0) == 0
+        || s.rfind("file://",  0) == 0;
+}
+
+/// Human-readable name for a WebConvertError::Category.
+const char* category_name(WebConvertError::Category c) {
+    switch (c) {
+    case WebConvertError::Category::InvalidArgument:   return "Invalid argument";
+    case WebConvertError::Category::PluginUnavailable: return "Plugin unavailable";
+    case WebConvertError::Category::CEFInitFailed:     return "CEF init failed";
+    case WebConvertError::Category::RenderFailed:      return "Render failed";
+    case WebConvertError::Category::Timeout:           return "Timeout";
+    case WebConvertError::Category::OutputFailed:      return "Output write failed";
+    case WebConvertError::Category::Unknown:           return "Unknown error";
+    }
+    return "Unknown error";
+}
+
+}  // namespace
 
 int main(int argc, char* argv[]) {
     std::cout << "CreateDocFromWebPage Sample:" << std::endl;
@@ -53,8 +84,18 @@ int main(int argc, char* argv[]) {
                 std::cout << "[WebToPDF " << lvl << "] " << message << std::endl;
             });
 
-        std::cout << "Converting " << source << " ..." << std::endl;
-        auto [doc, info] = Document::from_web_url(source, params);
+        const bool is_url = looks_like_url(source);
+        std::cout << "Converting " << (is_url ? "URL " : "HTML file ")
+                  << source << " ..." << std::endl;
+
+        // First conversion in a process spawns a separate WebToPDF server
+        // (CEF runs out-of-process), so the call below may take up to a
+        // second to start before any progress callbacks fire. Subsequent
+        // conversions reuse the running server.
+        auto [doc, info] = is_url
+            ? Document::from_web_url(source, params)
+            : Document::from_html_file(source, params);
+
         std::cout << std::endl;
         std::cout << "Wrote " << info.get_page_count() << " pages in "
                   << info.get_conversion_time_ms() << " ms" << std::endl;
@@ -74,7 +115,7 @@ int main(int argc, char* argv[]) {
     }
     catch (const WebConvertError& e) {
         std::cerr << std::endl
-                  << "Conversion failed (plugin code " << e.plugin_result_code()
+                  << "Conversion failed (" << category_name(e.category())
                   << "): " << e.detail() << std::endl;
         return 1;
     }
