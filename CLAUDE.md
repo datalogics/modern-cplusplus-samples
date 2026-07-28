@@ -43,7 +43,7 @@ _Common/             — shared headers (extract_text.hpp)
 Annotations/         — 5 samples
 ContentCreation/     — 16 samples
 ContentModification/ — 14 samples
-DocumentConversion/  — 7 samples
+DocumentConversion/  — 10 samples
 DocumentOptimization/— 1 sample
 Forms/               — 4 samples
 Images/              — 14 samples
