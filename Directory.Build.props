@@ -26,6 +26,9 @@
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>$(SdkRoot)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <!-- Samples use portable CRT functions (e.g. std::getenv); keep SDL
+           checks from promoting C4996 deprecation warnings to errors. -->
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>
