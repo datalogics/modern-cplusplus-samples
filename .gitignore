@@ -16,6 +16,7 @@ import_forms_data
 **/list_bookmarks
 **/list_layers
 **/list_paths
+**/list_struct_tree
 # Compiled binary named 'metadata' (not the directory)
 InformationExtraction/Metadata/metadata
 
@@ -81,6 +82,23 @@ Images/ImageResampling/image_resampling
 Images/ImageSoftMask/image_soft_mask
 Images/OutputPreview/output_preview
 Images/RasterizePage/rasterize_page
+
+# DocumentConversion binaries
+DocumentConversion/ColorConvertDocument/color_convert_document
+DocumentConversion/ConvertToOffice/convert_to_office
+DocumentConversion/CreateDocFromWebPage/create_doc_from_webpage
+DocumentConversion/CreateDocFromXPS/create_doc_from_xps
+DocumentConversion/CreateInvoiceFromStructuredData/create_invoice_from_structured_data
+DocumentConversion/Factur-XConverter/factur_x_converter
+DocumentConversion/MarkdownToPDF/markdown_to_pdf
+DocumentConversion/PDFAConverter/pdfa_converter
+DocumentConversion/PDFXConverter/pdfx_converter
+DocumentConversion/ZUGFeRDConverter/zugferd_converter
+
+# OpticalCharacterRecognition binaries
+OpticalCharacterRecognition/AddTextToDocument/add_text_to_document
+OpticalCharacterRecognition/AddTextToImage/add_text_to_image
+OpticalCharacterRecognition/OCRDocument/ocr_document
 
 # MSVC output
 *.pdb
