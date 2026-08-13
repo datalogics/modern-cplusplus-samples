@@ -47,7 +47,7 @@ DocumentConversion/  — 10 samples
 DocumentOptimization/— 1 sample
 Forms/               — 4 samples
 Images/              — 14 samples
-InformationExtraction/ — 5 samples
+InformationExtraction/ — 6 samples
 OpticalCharacterRecognition/ — 3 samples
 Other/               — 2 samples
 Security/            — 4 samples

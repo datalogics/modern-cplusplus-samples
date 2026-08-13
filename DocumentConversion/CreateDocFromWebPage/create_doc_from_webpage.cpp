@@ -59,10 +59,7 @@ int main(int argc, char* argv[]) {
         params.set_page_size(WebPageSize::Letter);
         params.set_page_orientation(WebPageOrientation::Portrait);
         params.set_margins_inches(0.5, 0.5, 0.5, 0.5);
-        params.set_image_compression(WebImageCompression::JPEG);
-        params.set_downsampling_dpi(WebDownsamplingDPI::DPI300);
         params.set_print_background(true);
-        params.set_generate_tagged_pdf(true);    // produce an accessible (tagged) PDF
         params.set_timeout_seconds(60);          // override the 300s plugin default
 
         params.set_progress_callback(
