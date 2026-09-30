@@ -3,11 +3,12 @@
 Converts a Microsoft Word (`.docx`) document to PDF with the Datalogics
 Office-to-PDF SDK's modern C++ interface (`office_to_pdf/converter.hpp`).
 
-The SDK initializes the Adobe PDF Library itself for each conversion, so this
-sample creates no `Library` of its own: it includes one header and calls
-`office_to_pdf::ConvertWordToPdf`, then reports the returned status and any
-per-asset diagnostics (substituted fonts, placeholder graphics — which can
-appear even on a successful conversion).
+The SDK converts on the Adobe PDF Library its caller has started on the
+calling thread, and never starts or stops it itself. So the sample creates a
+`Library`, as every sample here does, calls `office_to_pdf::ConvertWordToPdf`
+while it is alive, then reports the returned status and any per-asset
+diagnostics (substituted fonts, placeholder graphics — which can appear even
+on a successful conversion).
 
 ## Building and running
 

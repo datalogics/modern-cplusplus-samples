@@ -4,9 +4,10 @@
  * Converts a Microsoft Word (.docx) document to PDF using the Datalogics
  * Office-to-PDF SDK's modern C++ interface (office_to_pdf/converter.hpp).
  *
- * The SDK initializes the Adobe PDF Library itself for the duration of each
- * conversion, so this sample creates no library of its own -- it includes the
- * one converter header and calls ConvertWordToPdf.
+ * The SDK converts on the Adobe PDF Library its caller has started on the
+ * calling thread, and never starts or stops it itself. So this sample creates
+ * a Library, as every sample here does, and keeps it alive for the
+ * conversion.
  *
  * With no arguments it converts the bundled sample.docx to
  * ConvertWordToPDF-out.pdf in the current directory; pass an input .docx and an
@@ -15,6 +16,7 @@
  * Copyright (c) Datalogics, Inc. All rights reserved.
  */
 
+#include <datalogics_interface/datalogics_interface.hpp>
 #include <office_to_pdf/converter.hpp>
 
 #include <iostream>
@@ -60,6 +62,9 @@ int main(int argc, char* argv[])
     std::cout << "ConvertWordToPDF Sample:" << std::endl;
 
     try {
+        // Start the Adobe PDF Library on this thread. The conversion runs on it.
+        datalogics_interface::Library lib;
+
         std::string input = "sample.docx";
         std::string output = "ConvertWordToPDF-out.pdf";
         if (argc > 1)
