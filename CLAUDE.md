@@ -26,7 +26,7 @@ The SDK root is expected at `../../..` (i.e., the repo lives inside `DatalogicsC
 - Error handling: wrap main logic in `try/catch (const std::exception& e)`
 - Input files come from `Library::get_resource_directory() + "Sample_Input/..."` with optional `argv` overrides
 - Output files are written to the current directory
-- Exception: the Office-to-PDF SDK sample (`DocumentConversion/ConvertWordToPDF`) includes `<office_to_pdf/converter.hpp>`, uses `using namespace office_to_pdf;`, and creates no `Library` — the Office-to-PDF SDK initializes the Adobe PDF Library itself; its input is a bundled `sample.docx` with optional `argv` overrides
+- Exception: `DocumentConversion/ConvertWordToPDF` reads a bundled `sample.docx`, with optional `argv` overrides
 
 ## Commit Message Format
 

@@ -1,13 +1,22 @@
 # ConvertWordToPDF
 
 Converts a Microsoft Word (`.docx`) document to PDF with the Datalogics
-Office-to-PDF SDK's modern C++ interface (`office_to_pdf/converter.hpp`).
+Office-to-PDF plug-in, through `Document::from_office_file` in the Datalogics
+C++ APDFL API.
 
-The SDK initializes the Adobe PDF Library itself for each conversion, so this
-sample creates no `Library` of its own: it includes one header and calls
-`office_to_pdf::ConvertWordToPdf`, then reports the returned status and any
-per-asset diagnostics (substituted fonts, placeholder graphics — which can
-appear even on a successful conversion).
+The sample creates a `Library`, sets an `OfficeConvertParams`, and converts:
+
+```cpp
+auto [doc, info] = Document::from_office_file(input, params);
+// info.get_page_count(), info.get_diagnostics()
+```
+
+`from_office_file` returns an `OfficeConvertResult`: the converted `Document`,
+which the sample saves, and an `OfficeConvertInfo` with the page count and the
+per-asset diagnostics (substituted fonts, placeholder graphics), which can appear
+even on a successful conversion. A document that does not convert throws
+`OfficeConvertError`, and the sample reports its `Category` and the plug-in's
+message.
 
 ## Building and running
 
@@ -17,9 +26,10 @@ make                                   # or open ConvertWordToPDF.vcxproj in Vis
 ./convert_word_to_pdf input.docx out.pdf   # convert a specific document
 ```
 
-Ensure the SDK `lib/` directory is on your library search path so the SDK and
-APDFL runtime are found (`Directory.Build.props` sets this up for Visual Studio;
-the Makefile sets an RPATH).
+Ensure the SDK `lib/` directory is on your library search path so the APDFL
+runtime is found (`Directory.Build.props` sets this up for Visual Studio; the
+Makefile sets an RPATH). The plug-in, `DL210OfficeToPDF.ppi`, sits in the same
+directory, where APDFL loads its plug-ins.
 
 ## The sample document
 
@@ -31,8 +41,34 @@ demonstration is wanted.
 
 ## Conversion options
 
-The sample pins a fixed creation/modification date so repeated runs are
-byte-reproducible and omits Word comments. Call
-`ConvertWordToPdf(input, output)` for the SDK defaults (system clock, comments
-omitted), or set `ConversionOptions::comments` to `Margin` or `Annotations` to
-carry a reviewed document's comments into the PDF.
+The sample fixes the conversion time, so every run stamps the same dates, and
+leaves comments out. A default `OfficeConvertParams` uses the system clock and
+also leaves comments out. Call `set_comments` with
+`OfficeCommentRendering::Margin` or `OfficeCommentRendering::Annotations` to
+carry a reviewed document's comments into the PDF. The sample saves with
+`SaveFlags::KeepModDate`, so the fixed time is kept as the modification date as
+well.
+
+## Platform support
+
+The Office-to-PDF plug-in is published for a narrower set of platforms than
+APDFL itself:
+
+| Platform | Architectures |
+|----------|---------------|
+| Windows  | x64 |
+| Linux    | x86_64, ARM64 |
+| macOS    | Apple silicon (ARM64) only |
+
+**Not supported:** Windows on ARM64, and macOS on Intel (x86_64). On those
+platforms the conversion throws `OfficeConvertError` with
+`Category::PluginUnavailable`, which this sample reports as
+`Conversion failed (Plugin unavailable)`. The code still compiles everywhere.
+
+The same error is raised on a supported platform if `DL210OfficeToPDF.ppi` is
+missing from the SDK's `lib/` directory.
+
+## Notes
+
+The plug-in runs one conversion at a time, so calls to `from_office_file` from
+several threads, each holding its own `Library`, wait for each other.
